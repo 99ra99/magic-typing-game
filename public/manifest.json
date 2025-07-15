@@ -1,0 +1,17 @@
+{
+  "short_name": "마법타이핑",
+  "name": "마법 주문 타이핑 게임",
+  "description": "실시간 타이핑으로 마법 주문을 입력하여 NPC와 전투하는 게임",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#7c3aed",
+  "background_color": "#0f172a",
+  "lang": "ko"
+} 

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/magic-typing-game/static/css/main.233b3b67.css",
+    "main.js": "/magic-typing-game/static/js/main.2e33bb90.js",
+    "index.html": "/magic-typing-game/index.html",
+    "main.233b3b67.css.map": "/magic-typing-game/static/css/main.233b3b67.css.map",
+    "main.2e33bb90.js.map": "/magic-typing-game/static/js/main.2e33bb90.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.233b3b67.css",
+    "static/js/main.2e33bb90.js"
+  ]
+}
