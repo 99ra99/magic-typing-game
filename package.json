@@ -2,22 +2,27 @@
   "name": "magic-typing-game",
   "version": "1.0.0",
   "description": "마법 주문 타이핑 게임 - 실시간 타이핑으로 마법 주문을 입력하여 NPC와 전투하는 React 기반 게임",
+  "main": "electron.js",
   "private": true,
-  "homepage": "https://yourusername.github.io/magic-typing-game",
+  "homepage": "https://99ra99.github.io/magic-typing-game",
   "dependencies": {
+    "lucide-react": "^0.263.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "lucide-react": "^0.263.1",
     "web-vitals": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && copy build\\index.html build\\404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "electron": "electron .",
+    "electron-dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build-electron": "npm run build && electron-builder",
+    "dist": "npm run build && electron-builder --publish=never"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +43,31 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.2",
+    "electron-builder": "^26.0.12",
+    "electron-is-dev": "^3.0.1",
+    "gh-pages": "^5.0.0",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.magictyping.game",
+    "productName": "마법 주문 타이핑 게임",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "electron.js",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/favicon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
